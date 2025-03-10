@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #60c6a3;
+            height:100vh ;
+            display:flex;   
+        }
+
+        .form-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-box">
+        <h2>Registration Form</h2>
+
+        <form>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="date" name="dob" max="2025-03-11" required>
+            <input type="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+            <button type="submit">Submit</button>
+            <a href="login.html">Back to home</a>
+            
+        </form>
+    </div>
+
+</body>
+</html>
