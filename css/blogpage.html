@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Comment Form</title>
+    <style> /*this is for internal styling*/
+
+        /*element or type selector this is for body*/
+
+        body {
+            font-family: Arial, sans-serif; /*Font_family is used for the font style for the webpage*/
+            background-color:  #8abcda;/* used to give the background color for the whole page or inside the body tag*/
+            display: flex; /* to make a container we use flex like a box*/
+            flex-direction: column; /*direction by which the items are arranged in the container by default it is in rows*/
+            justify-content: center;/*to align the contents along main axis here it is vertical*/
+            align-items: center;/*align items to center*/
+            height: 100vh;/* to make it in full screen*/
+            margin: 0;/* removes default margin*/
+        }
+
+        /*class selectors class name is  box used in div tag*/
+
+        .box {
+            background-color: rgb(177, 221, 248);/* used to give the background color for the box*/
+            padding: 20px;/*gives equal spacing*/
+            border-radius: 8px;/*gives a the border a curved appearance*/
+            box-shadow: 0px 4px 8px rgba(1, 49, 65, 0.8);;/*the pixels are for horizontal shadow, vertical shadow,the blur effect and the shadow color*/
+            width: 100%;/*width of the box*/
+            height: 85%; /*height of the box*/
+            max-width: 950px; /*max width of the box*/
+            text-align: center;/*align items to center*/
+        }
+
+         /*element or type selector this is for h1*/
+
+        h1 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;/*Font_family is used for the font style for the elements in h1*/
+            color:rgb(37, 2, 9);/* assigns text color*/
+            margin-bottom: 20px;/* to add space below the tag*/
+            text-align: center;/*align items to center*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> <!--for division and also applying styles for group of tags-->
+        <h1>Delicious pancakes!!!</h1> <!--heading tag-->
+        <img src="https://cupofjo.com/wp-content/uploads/2025/03/ccpancakes1-2048x1365.jpg" width="450px" height="250px" style="border-radius: 20px;padding: 10px;"> <!--for giving an image and also used inline styling src is for the link of the image-->
+        <h3 style="text-align: left; color: rgb(37, 2, 9);padding:10px; ">A Pancake story</h3> <!--here it is a heading tag also this is an example of inline styling-->
+        <p>There's something magical about the aroma of pancakes sizzling on a warm Sunday morning. In a cozy little kitchen, sunlight streamed through the windows as Mia carefully poured the batter onto the griddle. It was her weekly tradition — a ritual that started when she was a child, standing on a stool beside her grandmother, watching golden pancakes fluff up. Today, she made them just as her grandmother taught her, with a touch of vanilla and a sprinkle of love.As the pancakes cooked, Mia thought about how these simple, round treats had a way of bringing people together. Friends would gather around the table, laughing over coffee while syrup dripped down the sides of warm stacks. For Mia, pancakes weren't just breakfast — they were comfort, memories, and home.When the last pancake was flipped, she stacked them high, added a pat of butter, and drizzled maple syrup over the top. With her first bite, a wave of warmth filled her heart. In a fast-paced world, pancakes reminded Mia to slow down and savor the sweet moments in life.</p> <!--paragraph tag-->
+        <h4 style="text-align: end;"><a href="blog.html" style="color: black;"> Share your stories</a></h4> <!--the text will be in size of h4 anchor tag is used to link pages-->
+    </div>
+</body>
+</html>
