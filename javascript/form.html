@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style> /*this is for internal styling*/
+
+        body {
+            font-family: Arial, sans-serif;/*Font_family is used for the font style for the webpage*/
+            background:  #8f94fb;/* used to give the background color for the whole page or inside the body tag*/
+            display: flex;/* to make a container we use flex like a box*/
+            justify-content: center;/*to align the contents along main axis here it is vertical*/
+            align-items: center;/*align items to center*/
+            height: 100vh;/* to make it in full screen*/
+            margin: 0;/* removes default margin*/
+        }
+        .container {
+            background: #7daaf8; /* background color for the form*/
+            padding: 40px;/*gives equal spacing*/
+            border-radius: 20px; /*gives a the border a curved appearance*/
+            box-shadow: 0 8px 32px rgba(1, 49, 65, 0.8); /*the pixels are for horizontal shadow, vertical shadow,the blur effect and the shadow color*/
+            width: 100%;/*width of the box*/
+            max-width: 450px; /*max-width of the box*/
+            height: 85%;/*height of the box*/
+        }
+
+        .form-group {
+            margin-bottom: 10px;/* to add space below the tag*/
+        }
+
+        label {
+            font-weight: bold;/*boldness of the text*/
+            display: block;/*Takes up the full width of its container.*/
+        }
+
+        input, select {
+            width: 100%;/*width of the box*/
+            padding: 12px; /*gives equal spacing*/
+            margin: 10px 0; /*gives space outside the element 10-top and bottom,0-left and right*/
+            border: 2px;/*width of border*/
+            border-radius: 10px; /*gives a the border a curved appearance*/
+            font-size: 16px; /*size of the text*/
+            color:black; /* assigns text color*/
+            background: #f9f9f9; /*background for the box */
+           
+        }
+
+        
+
+        .error {
+            color: red;/*gives color*/
+            font-size: 14px;/*gives text size*/
+        }
+
+        button {
+            background-color: #297ba7;/* background color for the button*/
+            color: black;/* assigns text color*/
+            padding: 15px;/*gives equal spacing*/
+            border: none;/*for no border*/
+            border-radius: 5px;/*gives a the border a curved appearance*/
+            cursor: pointer;/*change the mouse pointer to hand symbol*/
+            width: 100%;/*width of the button*/
+        }
+
+        button:hover {
+            background-color: #0e25f6;/*when hovered the button changes to this color*/
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container"><!--for division and also applying styles for group of tags-->
+    <h2>Registration Form</h2><!--heading tag-->
+    <form id="registrationForm" action="success.html" onsubmit="return validateForm()"><!--creating a form and what action and function should be done when it is submitted-->
+        <div class="form-group">
+            <label for="name">Full Name:</label><!--gives a label for the field-->
+            <input type="text" id="name"> <!--for entering user input-->
+            <span class="error" id="nameError"></span><!--space where the error appears-->
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label><!--gives a label for the field-->
+            <input type="email" id="email"><!--for entering user input-->
+            <span class="error" id="emailError"></span><!--space where the error appears-->
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone"><!--for entering user input-->
+            <span class="error" id="phoneError"></span><!--space where the error appears-->
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label><!--gives a label for the field-->
+            <select id="gender"><!--creates a drop down menu-->
+                <option value="">Select</option><!--for the items inside the menu-->
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="error" id="genderError"></span><!--space where the error appears-->
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label><!--gives a label for the field-->
+            <input type="password" id="password"><!--for entering user input-->
+            <span class="error" id="passwordError"></span><!--space where the error appears-->
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label><!--gives a label for the field-->
+            <input type="password" id="confirmPassword"><!--for entering user input-->
+            <span class="error" id="confirmPasswordError"></span><!--space where the error appears-->
+        </div>
+
+        <button type="submit">Register</button><!--creates a button-->
+    </form>
+</div>
+
+<script>// for including and executing javascript codes
+    // Form validation function
+    function validateForm() {
+        let valid = true;//declares a variable valid to perform the validation
+        let namePattern = /^[a-zA-Z\s]+$/;//to check if the name only contains alphabet
+
+        // Name Validation
+        let name = document.getElementById("name").value.trim();//the element with id name is retrieved and trim is used to remove extra spaces
+        if (name === "") {
+            document.getElementById("nameError").textContent = "Name is required.";
+            valid = false;//checks whether the name is empty or not if it is empty it will show an error message submission won't happen
+        } else if (!namePattern.test(name)) {
+            document.getElementById("nameError").textContent = "Name should only contain alphabets.";
+            valid = false;//checks whether the pattern of name is matching or not if it is not matching it will show an error message submission won't happen
+        } else {
+            document.getElementById("nameError").textContent = "";
+        }//clears any error messages which was there before
+
+        // Email Validation
+        let email = document.getElementById("email").value.trim();//the element with id email is retrieved and trim is used to remove extra spaces
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;//pattern for email
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Enter a valid email.";
+            valid = false;//checks whether the pattern of email is matching or not if it is not matching it will show an error message submission won't happen
+        } else {
+            document.getElementById("emailError").textContent = "";
+        }//clears any error messages which was there before
+
+        // Phone Validation
+        let phone = document.getElementById("phone").value.trim();//the element with id phone is retrieved and trim is used to remove extra spaces
+        let phonePattern = /^[0-9]{10}$/;//pattern for phone
+        if (!phonePattern.test(phone)) {
+            document.getElementById("phoneError").textContent = "Enter a valid 10-digit phone number.";
+            valid = false;//checks whether the pattern of phone is matching or not if it is not matching it will show an error message submission won't happen
+        } else {
+            document.getElementById("phoneError").textContent = "";
+        }//clears any error messages which was there before
+
+        // Gender Validation
+        let gender = document.getElementById("gender").value;//the element with id gender is retrieved and trim is used to remove extra spaces
+        if (gender === "") {
+            document.getElementById("genderError").textContent = "Please select a gender.";
+            valid = false;//checks whether the gender is empty or not if it is empty it will show an error message submission won't happen
+        } else {
+            document.getElementById("genderError").textContent = "";
+        }//clears any error messages which was there before
+
+
+        // Password Validation
+        let password = document.getElementById("password").value.trim();//the element with id password is retrieved and trim is used to remove extra spaces
+        if (password.length < 6) {
+            document.getElementById("passwordError").textContent = "Password must be at least 6 characters.";
+            valid = false;//checks whether the length of password is greater than 6 or not if it is empty it will show an error message submission won't happen
+        } else {
+            document.getElementById("passwordError").textContent = "";
+        }//clears any error messages which was there before
+
+
+        // Confirm Password Validation
+        let confirmPassword = document.getElementById("confirmPassword").value.trim();//the element with id confirm password is retrieved and trim is used to remove extra spaces
+        if (confirmPassword !== password) {
+            document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+            valid = false;//checks whether the previous password matches with this one
+        } else {
+            document.getElementById("confirmPasswordError").textContent = "";
+        }//clears any error messages which was there before
+
+
+        // Return false if validation fails to prevent submission
+        return valid;
+    }
+
+</script>
+
+</body>
+
+</html>

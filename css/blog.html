@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,3 +104,110 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Comment Form</title>
+    <style>/*this is for internal styling*/
+
+        /*element or type selector this is for body*/
+        body {
+            font-family: Arial, sans-serif; /*Font_family is used for the font style for the webpage*/
+            background-color:  #8abcda;/* used to give the background color for the whole page or inside the body tag*/
+            display: flex; /* to make a container we use flex like a box*/
+            flex-direction: column; /*direction by which the items are arranged in the container by default it is in rows*/
+            justify-content: center;/*to align the contents along main axis here it is vertical*/
+            align-items: center;/*align items to center*/
+            height: 100vh;/* to make it in full screen*/
+            margin: 0;/* removes default margin*/
+        }
+
+        /*element or type selector this is for h1*/
+
+        h1 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;/*Font_family is used for the font style for the elements in h1*/
+            color:rgb(37, 2, 9);/* assigns text color*/
+            margin-bottom: 20px;/* to add space below the tag*/
+            text-align: center;/*align items to center*/
+        }
+
+        /*class selectors class name is comment box used in div tag*/
+
+        .comment-box {
+            background:rgb(177, 221, 248);/* background color for the comment box*/
+            padding: 20px;/*gives equal spacing*/
+            border-radius: 8px;/*gives a the border a curved appearance*/
+            box-shadow: 0px 4px 8px rgba(1, 49, 65, 0.8);;/*the pixels are for horizontal shadow, vertical shadow,the blur effect and the shadow color*/
+            width: 100%;/*width of the box*/
+            height:400px;/*height of the box*/
+            max-width: 450px; /*max-width of the box*/
+            text-align: center;/*align items to center*/
+        }
+
+        /*element or type selector this is for h2*/
+
+        h2 {
+            margin-bottom: 15px;/* to add space below the tag*/
+            color: #333;/* assigns text color*/
+        }
+
+        /*element or type selector this is for input,textarea*/
+
+        input, textarea {
+            width: 90%;/*width of the box*/
+            padding: 15px;/*gives equal spacing*/
+            margin: 5px 0;/*gives space outside the element 5-top and bottom,0-left and right*/
+            border: 1px solid #ccc;/*gives border for the box and also the border color*/
+            border-radius: 5px;/*gives a the border a curved appearance*/
+            font-size: 14px;/*size of the text*/
+            color: black;/* assigns text color*/
+        }
+
+
+        /*element or type selector this is only for textarea*/
+
+
+        textarea {
+            height: 80px;/*height of the box*/
+        }
+
+        /*element or type selector this is only for button*/
+
+        button {
+            background-color: #7fcffa;/* background color for the button*/
+            color: rgb(2, 5, 19);/* assigns text color*/
+            border: none;/*for no border*/
+            padding: 10px;/*gives equal spacing*/
+            width: 100%;/*width of the button*/
+            border-radius: 5px;/*gives a the border a curved appearance*/
+            font-size: 16px;/*size of the text*/
+            cursor: pointer;/*change the mouse pointer to hand symbol*/
+        }
+
+        button:hover {
+            background-color: #5319e4;/*when hovered the button changes to this color*/
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Let's hear your stories</h1> <!--heading tag-->
+    
+    <div class="comment-box"> <!--for division and also applying styles for group of tags-->
+        <h2>Pancake stories</h2> <!--heading tag-->
+        <form> <!--creating a form and collecting user input-->
+            <input type="text" name="name" placeholder="Your Name" required> <!--for entering user input-->
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="comment" placeholder="Your story" required></textarea>
+            <button type="submit">Submit</button> <!--create a button-->
+            
+        </form>
+        <a href="blogpage.html" style="color: black; margin-top: 20px; display: inline-block; text-decoration: none;">Back to home</a> <!--linking different html pages etc-->
+    </div>
+
+</body>
+</html>
+>>>>>>> 99f1f97 (Added new javascript folder)

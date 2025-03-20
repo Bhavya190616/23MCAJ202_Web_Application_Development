@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Site</title>
+    <style>/*this is for internal styling*/
+        body {
+            font-family: Arial, sans-serif;/*Font_family is used for the font style for the webpage*/
+            margin: 0;/* removes default margin*/
+            box-sizing: border-box;/*ensures the width and height of elements are within the range*/
+            background:  #8f94fb;/* used to give the background color for the whole page or inside the body tag*/
+            color: rgb(200, 218, 245);/* assigns text color*/
+            display: flex;/* to make a container we use flex like a box*/
+            justify-content: center;/*to align the contents along main axis here it is vertical*/
+            align-items: center;/*align items to center*/
+            height: 100vh;/* to make it in full screen*/
+            text-align: center;/*align text to center*/
+        }
+        .container {
+            padding: 40px;/*gives equal spacing*/
+            background: rgba(0, 0, 0, 0.6);/* background color*/
+            border-radius: 12px;/*gives a the border a curved appearance*/
+            box-shadow: 0 10px 25px rgba(1, 49, 65, 0.8);/*the pixels are for horizontal shadow, vertical shadow,the blur effect and the shadow color*/
+            max-width: 600px;/*max-width of the box*/
+        }
+        h1 {
+            font-size: large;/*text size*/
+            margin-bottom: 20px;/* to add space below the tag*/
+        }
+        p {
+            font-size: medium;/*text size*/
+            line-height: 1.6;/* Increases line spacing */
+            margin-bottom: 30px;/* to add space below the tag*/
+        }
+        .btn {
+            padding: 15px ;/*gives equal spacing*/
+            font-size: small;/*text size*/
+            color: white;/*text color*/
+            background:  #297ba7;/* background color for the button*/
+            border: none;/*for no border*/
+            border-radius: 8px;/*gives a the border a curved appearance*/
+            cursor: pointer;/*change the mouse pointer to hand symbol*/
+            text-decoration: none;/*no underline*/
+            
+        }
+        .btn:hover {
+            background: #5319e4;/*when hovered the button changes to this color*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="container"><!--for division and also applying styles for group of tags-->
+    <h1>Welcome to Our Website!</h1> <!--heading tag-->
+    <p>Join us today and be a part of our amazing community. Click below to get started!</p><!--paragraph-->
+    <a href="form.html" class="btn">Register Now</a><!--linking different html pages etc-->
+</div>  
+
+</body>
+</html>

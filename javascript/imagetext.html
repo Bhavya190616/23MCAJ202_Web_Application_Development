@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Image and Text Changer</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;/*Font_family is used for the font style for the webpage*/
+            margin: 0;/* removes default margin*/
+            box-sizing: border-box;/*ensures the width and height of elements are within the range*/
+            color: rgb(200, 218, 245);/* assigns text color*/
+            display: flex;/* to make a container we use flex like a box*/
+            justify-content: center;/*to align the contents along main axis here it is vertical*/
+            align-items: center;/*align items to center*/
+            height: 100vh;/* to make it in full screen*/
+            text-align: center;/*align text to center*/
+        }
+
+         .image-box {
+            padding: 150px; /*equal spacing*/
+            border: 10px solid rgba(0, 0, 0, 0.2); /* Visible border with transparency */
+            border-radius: 16px; /*gives a the border a curved appearance*/  
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Soft shadow around the box */ 
+            object-fit:fill;  /*to make the image fill the background of the container*/
+            background-size: cover;/*to stop the image from repeating*/
+        }
+
+        .container {
+            padding: 40px;/*equal spacing*/
+            background: rgba(0, 0, 0, 0.6);/* colour with transparency */
+            border-radius: 12px;/*gives a the border a curved appearance*/  
+            box-shadow: 0 10px 25px rgba(1, 49, 65, 0.8);/*the pixels are for horizontal shadow, vertical shadow,the blur effect and the shadow color*/
+            max-width: 600px; /*max-width of the box*/
+        }
+
+        .btn {
+            padding: 15px ;/*gives equal spacing*/
+            font-size: small;/*text size*/
+            color: white;/*text color*/
+            background:   #0997ee;/* background color for the button*/
+            border: none;/*for no border*/
+            border-radius: 8px;/*gives a the border a curved appearance*/
+            cursor: pointer;/*change the mouse pointer to hand symbol*/
+            text-decoration: none;/*no underline*/
+            
+        }
+
+        .btn:hover {
+            background: #297ba7;/*when hovered the button changes to this color*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-box" id="imageBox"><!--for division and also applying styles for group of tags-->
+    <div class="container"><!--for division and also applying styles for group of tags-->
+        <h2 id="heading">Hover over the button to change image & text!</h2><!--heading tag-->
+        <button class="btn" onmouseover="changeContent()">Hover Me</button><!--creates a button and when the evenhandler that is onmousehover happens it will perform the function changecontent-->
+    </div>
+
+    <script>//for writing and executing javascript codes
+        // Arrays of images declared using the keyword const that makes it constant
+        const images = [
+            'url("https://t4.ftcdn.net/jpg/01/62/69/25/360_F_162692511_SidIKVCDnt5UKHPNqpCb2MSKvfBlx1lG.jpg")',
+            'url("https://images.pexels.com/photos/70365/forest-sunbeams-trees-sunlight-70365.jpeg?cs=srgb&dl=pexels-pixabay-70365.jpg&fm=jpg")',
+            'url("https://thumbs.dreamstime.com/b/city-chicago-20896212.jpg")'
+        ];
+        //Arrays of text declared using the keyword const that makes it constant
+        const texts = [
+            'Enjoy this beautiful landscape!',
+            'Nature is breathtaking!',
+            'Welcome to the city lights!'
+        ];
+
+        let index = 0; // Track the current position and iteration
+
+        function changeContent() {
+            // change the image of the container which has id imagebox when button is hovered
+            document.getElementById("imageBox").style.backgroundImage = images[index];
+
+            // Change heading text of the container which has id heading when button is hovered
+            document.getElementById('heading').innerText = texts[index];
+
+            // Move to the next item, loop back if at the end
+            index = (index + 1) % images.length;//index will increase one by one till the end of the array
+        }
+    </script>
+</body>
+
+</html>
