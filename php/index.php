@@ -156,9 +156,7 @@ if (
 
 <div class="container"><!--for division and also applying styles for group of tags-->
     <h2>Registration Form</h2><!--heading tag-->
-    <form id="registrationForm"  method="POST"><!--creating a form and what action and function should be done when it is submitted--> <!-- This form submits the data to the same page (self-processing form)
-         htmlspecialchars() is used to prevent XSS (cross-site scripting) attacks by escaping HTML special characters
-         method="POST" means the form data will be sent in the body, not visible in the URL -->
+    <form id="registrationForm"  method="POST"><!--creating a form -- method="POST" means the form data will be sent in the body, not visible in the URL -->
         <div class="form-group">
             <label for="name">Full Name:<span class="required">*</span></label><!--gives a label for the field-->
             <input type="text" name="name"> <!--for entering user input-->
